@@ -154,6 +154,8 @@ export default {
   },
 
   async scheduled(event, env, ctx) {
+    console.log("⏰ Cron job triggered. Checking QUEUE_STORE...");
+    
     // List all keys in QUEUE_STORE
     let keys = [];
     let listComplete = false;
@@ -166,26 +168,26 @@ export default {
       cursor = listResult.cursor;
     }
 
+    console.log(`Found ${keys.length} total videos in the queue.`);
     const now = Date.now();
 
     for (const key of keys) {
-      // Parse the stored JSON values
       const jobString = await env.QUEUE_STORE.get(key.name);
       if (!jobString) continue;
 
       try {
         const job = JSON.parse(jobString);
-        // Track completed channels in the job itself
         job.completed_channels = job.completed_channels || [];
         const scheduledTime = new Date(job.scheduled_date).getTime();
 
-        // If current time is greater than or equal to scheduled_date, process the job
+        console.log(`Evaluating job ${key.name} (${job.title}). Scheduled for: ${new Date(scheduledTime).toISOString()}`);
+
         if (now >= scheduledTime) {
+          console.log(`Job ${key.name} is DUE! Processing...`);
           const channelIds = BRAND_CONFIG[job.brand];
 
           if (!channelIds || channelIds.length === 0) {
             console.error(`No channels configured for brand: ${job.brand}`);
-            // Optional: delete invalid job to prevent it from blocking forever
             await env.QUEUE_STORE.delete(key.name);
             continue;
           }
@@ -193,21 +195,20 @@ export default {
           let allDone = true;
           let jobModified = false;
 
-          // Iterate over the channelIds mapped to the job's brand
           for (const channelId of channelIds) {
-            // If already posted to this channel successfully, skip
             if (job.completed_channels.includes(channelId)) {
+              console.log(`Skipping channel ${channelId} - already posted successfully.`);
               continue;
             }
 
-            // Skip placeholders that haven't been configured yet
             if (channelId.startsWith("BUFFER_")) {
-              allDone = false; // We can't finish this job yet, waiting for user to configure
-              console.log(`Skipping unconfigured channel: ${channelId}`);
+              allDone = false; 
+              console.log(`Skipping unconfigured placeholder channel: ${channelId}`);
               continue;
             }
 
-            // Buffer GraphQL mutation
+            console.log(`Attempting to post to Buffer channel: ${channelId}...`);
+
             const query = `
               mutation {
                 createPost(
@@ -224,7 +225,6 @@ export default {
               }
             `;
 
-            // Select the appropriate access token based on the brand
             let accessToken = "";
             if (job.brand === "FTN News") {
               accessToken = env.BUFFER_NEWS_ACCESS_TOKEN;
@@ -232,39 +232,50 @@ export default {
               accessToken = env.BUFFER_SPORTS_ACCESS_TOKEN;
             }
 
-            // Send a fetch() POST request using Buffer GraphQL API
+            if (!accessToken) {
+              console.error(`ERROR: No Access Token found in secrets for brand: ${job.brand}`);
+              allDone = false;
+              continue;
+            }
+
             const response = await fetch("https://api.buffer.com/1/graphql", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
-                "Authorization": `Bearer ${accessToken || "YOUR_BUFFER_TOKEN"}`
+                "Authorization": `Bearer ${accessToken}`
               },
               body: JSON.stringify({ query })
             });
 
             if (!response.ok) {
-              console.error(`Failed to post to Buffer channel ${channelId} for job ${key.name}: ${response.statusText}`);
+              console.error(`Buffer HTTP Error on channel ${channelId}: ${response.status} ${response.statusText}`);
+              const errText = await response.text();
+              console.error(`Buffer Error Details: ${errText}`);
               allDone = false;
             } else {
               const resData = await response.json();
               if (resData.errors) {
-                console.error(`Buffer GraphQL Error for job ${key.name}:`, resData.errors);
+                console.error(`Buffer GraphQL Error for job ${key.name}:`, JSON.stringify(resData.errors));
                 allDone = false;
               } else {
-                // Success! Record it.
+                console.log(`✅ Successfully posted to channel ${channelId}!`);
                 job.completed_channels.push(channelId);
                 jobModified = true;
               }
             }
           }
 
-          // If all non-placeholder channels succeeded and no placeholders remain, delete the job.
           if (allDone) {
+            console.log(`🎉 Job ${key.name} posted to all channels. Deleting from queue.`);
             await env.QUEUE_STORE.delete(key.name);
           } else if (jobModified) {
-            // Otherwise, if we successfully posted to some new channels, save our progress.
+            console.log(`Job ${key.name} partially completed. Saving progress...`);
             await env.QUEUE_STORE.put(key.name, JSON.stringify(job));
+          } else {
+            console.log(`Job ${key.name} processing finished, but no new channels were successfully posted.`);
           }
+        } else {
+          console.log(`Job ${key.name} is NOT due yet.`);
         }
       } catch (e) {
         console.error(`Error processing job ${key.name}: ${e.message}`);

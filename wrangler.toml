@@ -8,3 +8,7 @@ crons = ["*/5 * * * *"]
 [[kv_namespaces]]
 binding = "QUEUE_STORE"
 id = "bd594bd898bf4a199147827870265e85" # Replace with your actual KV namespace ID
+
+[observability.logs]
+enabled = true
+invocation_logs = true
