@@ -13,6 +13,32 @@ const BRAND_CONFIG = {
 
 export default {
   async fetch(request, env, ctx) {
+    const corsHeaders = {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET, POST, PATCH, DELETE, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type, x-api-key, Authorization",
+    };
+
+    if (request.method === "OPTIONS") {
+      return new Response(null, { headers: corsHeaders });
+    }
+
+    const response = await this.handleRequest(request, env);
+    
+    // Append CORS headers to the response
+    const newHeaders = new Headers(response.headers);
+    for (const [key, value] of Object.entries(corsHeaders)) {
+      newHeaders.set(key, value);
+    }
+    
+    return new Response(response.body, {
+      status: response.status,
+      statusText: response.statusText,
+      headers: newHeaders
+    });
+  },
+
+  async handleRequest(request, env) {
     // Basic API Key Authentication
     const apiKey = request.headers.get("x-api-key") || request.headers.get("Authorization")?.replace("Bearer ", "");
     if (apiKey !== env.API_KEY) {
