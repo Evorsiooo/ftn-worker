@@ -88,9 +88,13 @@ export default {
           
           let status = "scheduled";
           if (completedChannels.length > 0) {
-            status = "partially posted";
+            if (completedChannels.length >= channelIds.length && channelIds.length > 0) {
+              status = "posted";
+            } else {
+              status = "partially posted";
+            }
           }
-          if (now >= scheduledTime) {
+          if (now >= scheduledTime && status !== "posted") {
             const hasPlaceholders = channelIds.some(id => id.startsWith("BUFFER_"));
             if (hasPlaceholders && completedChannels.length < channelIds.length) {
               status = "waiting on missing IDs";
@@ -124,6 +128,7 @@ export default {
           if (!jobString) return new Response("Not found", { status: 404 });
           const job = JSON.parse(jobString);
           job.scheduled_date = new Date().toISOString(); // fast-track
+          job.completed_channels = []; // force retry for debugging
           await env.QUEUE_STORE.put(jobId, JSON.stringify(job));
           return new Response(JSON.stringify({ success: true, message: "Video fast-tracked" }), { status: 200, headers: { "Content-Type": "application/json" } });
         }
@@ -215,7 +220,7 @@ export default {
                   channelId: "${channelId}",
                   text: ${JSON.stringify(job.title)},
                   schedulingType: automatic,
-                  mode: addToQueue,
+                  mode: shareNow,
                   assets: [{ video: { url: ${JSON.stringify(job.download_url)} } }]
                 }) {
                   ... on PostActionSuccess {
@@ -262,6 +267,9 @@ export default {
               if (resData.errors) {
                 console.error(`Buffer GraphQL Error for job ${key.name}:`, JSON.stringify(resData.errors));
                 allDone = false;
+              } else if (resData.data && resData.data.createPost && resData.data.createPost.message) {
+                console.error(`Buffer Mutation Error on channel ${channelId} for job ${key.name}: ${resData.data.createPost.message}`);
+                allDone = false;
               } else {
                 console.log(`✅ Successfully posted to channel ${channelId}!`);
                 job.completed_channels.push(channelId);
@@ -271,8 +279,8 @@ export default {
           }
 
           if (allDone) {
-            console.log(`🎉 Job ${key.name} posted to all channels. Deleting from queue.`);
-            await env.QUEUE_STORE.delete(key.name);
+            console.log(`🎉 Job ${key.name} posted to all channels. Keeping in queue for debugging/history.`);
+            await env.QUEUE_STORE.put(key.name, JSON.stringify(job));
           } else if (jobModified) {
             console.log(`Job ${key.name} partially completed. Saving progress...`);
             await env.QUEUE_STORE.put(key.name, JSON.stringify(job));
