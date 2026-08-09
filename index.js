@@ -39,15 +39,18 @@ export default {
   },
 
   async handleRequest(request, env) {
-    // Basic API Key Authentication
-    const apiKey = request.headers.get("x-api-key") || request.headers.get("Authorization")?.replace("Bearer ", "");
-    if (apiKey !== env.API_KEY) {
-      return new Response("Unauthorized", { status: 401 });
-    }
-
     const url = new URL(request.url);
     const path = url.pathname;
     const method = request.method;
+
+    // Basic API Key Authentication (Headers or Query Params)
+    const apiKey = request.headers.get("x-api-key") 
+                || request.headers.get("Authorization")?.replace("Bearer ", "")
+                || url.searchParams.get("api_key");
+                
+    if (apiKey !== env.API_KEY) {
+      return new Response("Unauthorized", { status: 401 });
+    }
 
     try {
       // 1. Webhook (backward compatible with root `/` for ease of transition)
