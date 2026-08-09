@@ -214,6 +214,9 @@ export default {
 
             console.log(`Attempting to post to Buffer channel: ${channelId}...`);
 
+            const isInstagram = channelId === "6a789f17b2d9d5774345a91d" || channelId === "6a78b7c7b2d9d5774346590b";
+            const metadataStr = isInstagram ? `metadata: { instagram: { postType: reel } }` : ``;
+
             const query = `
               mutation {
                 createPost(input: {
@@ -222,6 +225,7 @@ export default {
                   schedulingType: automatic,
                   mode: shareNow,
                   assets: [{ video: { url: ${JSON.stringify(job.download_url)} } }]
+                  ${metadataStr}
                 }) {
                   ... on PostActionSuccess {
                     post {
