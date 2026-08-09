@@ -13,36 +13,114 @@ const BRAND_CONFIG = {
 
 export default {
   async fetch(request, env, ctx) {
-    if (request.method !== "POST") {
-      return new Response("Method not allowed", { status: 405 });
+    // Basic API Key Authentication
+    const apiKey = request.headers.get("x-api-key") || request.headers.get("Authorization")?.replace("Bearer ", "");
+    if (apiKey !== env.API_KEY) {
+      return new Response("Unauthorized", { status: 401 });
     }
 
-    try {
-      const body = await request.json();
+    const url = new URL(request.url);
+    const path = url.pathname;
+    const method = request.method;
 
-      // Validate incoming JSON body
-      if (!body.brand || !body.title || !body.download_url || !body.scheduled_date) {
-        return new Response(JSON.stringify({ error: "Missing required fields" }), {
-          status: 400,
-          headers: { "Content-Type": "application/json" }
-        });
+    try {
+      // 1. Webhook (backward compatible with root `/` for ease of transition)
+      if (method === "POST" && (path === "/api/webhook" || path === "/")) {
+        const body = await request.json();
+        if (!body.brand || !body.title || !body.download_url || !body.scheduled_date) {
+          return new Response(JSON.stringify({ error: "Missing required fields" }), { status: 400, headers: { "Content-Type": "application/json" } });
+        }
+        const jobId = crypto.randomUUID();
+        await env.QUEUE_STORE.put(jobId, JSON.stringify(body));
+        return new Response(JSON.stringify({ success: true, jobId }), { status: 200, headers: { "Content-Type": "application/json" } });
       }
 
-      // Generate a unique ID for the job
-      const jobId = crypto.randomUUID();
+      // 2. GET all videos
+      if (method === "GET" && path === "/api/videos") {
+        let keys = [];
+        let listComplete = false;
+        let cursor = undefined;
+        while (!listComplete) {
+          const listResult = await env.QUEUE_STORE.list({ cursor });
+          keys.push(...listResult.keys);
+          listComplete = listResult.list_complete;
+          cursor = listResult.cursor;
+        }
 
-      // Store the parsed payload in QUEUE_STORE as a JSON string
-      await env.QUEUE_STORE.put(jobId, JSON.stringify(body));
+        const now = Date.now();
+        const videos = [];
+        for (const key of keys) {
+          const jobString = await env.QUEUE_STORE.get(key.name);
+          if (!jobString) continue;
+          const job = JSON.parse(jobString);
+          const completedChannels = job.completed_channels || [];
+          const scheduledTime = new Date(job.scheduled_date).getTime();
+          const channelIds = BRAND_CONFIG[job.brand] || [];
+          
+          let status = "scheduled";
+          if (completedChannels.length > 0) {
+            status = "partially posted";
+          }
+          if (now >= scheduledTime) {
+            const hasPlaceholders = channelIds.some(id => id.startsWith("BUFFER_"));
+            if (hasPlaceholders && completedChannels.length < channelIds.length) {
+              status = "waiting on missing IDs";
+            } else if (completedChannels.length === 0) {
+              status = "failed/retrying"; 
+            }
+          }
 
-      return new Response(JSON.stringify({ success: true, jobId }), {
-        status: 200,
-        headers: { "Content-Type": "application/json" }
-      });
+          videos.push({
+            id: key.name,
+            brand: job.brand,
+            title: job.title,
+            download_url: job.download_url,
+            scheduled_date: job.scheduled_date,
+            status: status,
+            completed_channels: completedChannels
+          });
+        }
+        return new Response(JSON.stringify(videos), { status: 200, headers: { "Content-Type": "application/json" } });
+      }
+
+      // Route matching for /api/videos/:id endpoints
+      const videoMatch = path.match(/^\/api\/videos\/([a-zA-Z0-9-]+)(\/post-now)?$/);
+      if (videoMatch) {
+        const jobId = videoMatch[1];
+        const isPostNow = !!videoMatch[2];
+
+        // 3. POST /api/videos/:id/post-now
+        if (method === "POST" && isPostNow) {
+          const jobString = await env.QUEUE_STORE.get(jobId);
+          if (!jobString) return new Response("Not found", { status: 404 });
+          const job = JSON.parse(jobString);
+          job.scheduled_date = new Date().toISOString(); // fast-track
+          await env.QUEUE_STORE.put(jobId, JSON.stringify(job));
+          return new Response(JSON.stringify({ success: true, message: "Video fast-tracked" }), { status: 200, headers: { "Content-Type": "application/json" } });
+        }
+
+        // 4. PATCH /api/videos/:id
+        if (method === "PATCH" && !isPostNow) {
+          const updates = await request.json();
+          const jobString = await env.QUEUE_STORE.get(jobId);
+          if (!jobString) return new Response("Not found", { status: 404 });
+          const job = JSON.parse(jobString);
+          
+          Object.assign(job, updates); // Merge updates
+          await env.QUEUE_STORE.put(jobId, JSON.stringify(job));
+          return new Response(JSON.stringify({ success: true, job }), { status: 200, headers: { "Content-Type": "application/json" } });
+        }
+
+        // 5. DELETE /api/videos/:id
+        if (method === "DELETE" && !isPostNow) {
+          await env.QUEUE_STORE.delete(jobId);
+          return new Response(JSON.stringify({ success: true, message: "Deleted" }), { status: 200, headers: { "Content-Type": "application/json" } });
+        }
+      }
+
+      return new Response("Not found", { status: 404 });
     } catch (e) {
-      return new Response(JSON.stringify({ error: "Invalid JSON payload" }), {
-        status: 400,
-        headers: { "Content-Type": "application/json" }
-      });
+      return new Response(JSON.stringify({ error: e.message }), { status: 400, headers: { "Content-Type": "application/json" } });
     }
   },
 
