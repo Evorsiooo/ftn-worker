@@ -1,0 +1,1256 @@
+[
+  {
+    "source": {
+      "message": "Job 95677578-f522-4a22-b45b-d079cb3bf582 is NOT due yet."
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-08-09T20:20:11.435Z",
+    "$workers": {
+      "truncated": false,
+      "event": {
+        "cron": "*/5 * * * *",
+        "scheduledTime": 1786306809000
+      },
+      "scriptName": "ftn-worker",
+      "eventType": "cron",
+      "scriptVersion": {
+        "id": "5b82b61b-756f-4343-9d73-931c43723b71"
+      },
+      "executionModel": "stateless",
+      "requestId": "K6N8MCOEPFEBTUMI"
+    },
+    "$metadata": {
+      "id": "01KZM2XNHB6RQETNPD8ENE4WZ7",
+      "requestId": "K6N8MCOEPFEBTUMI",
+      "trigger": "*/5 * * * *",
+      "service": "ftn-worker",
+      "message": "Job 95677578-f522-4a22-b45b-d079cb3bf582 is NOT due yet.",
+      "account": "766be096be2baa4677baf5d515e51c8d",
+      "type": "cf-worker",
+      "fingerprint": "05daa513ce3512fef5d6fd9934920e0b",
+      "origin": "cron",
+      "messageTemplate": "Job <UUID> is NOT due yet."
+    }
+  },
+  {
+    "source": {
+      "message": "Evaluating job 95677578-f522-4a22-b45b-d079cb3bf582 (Why NYC rat complaints are dropping). Scheduled for: 2026-08-12T10:00:00.000Z"
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-08-09T20:20:11.435Z",
+    "$workers": {
+      "truncated": false,
+      "event": {
+        "cron": "*/5 * * * *",
+        "scheduledTime": 1786306809000
+      },
+      "scriptName": "ftn-worker",
+      "eventType": "cron",
+      "scriptVersion": {
+        "id": "5b82b61b-756f-4343-9d73-931c43723b71"
+      },
+      "executionModel": "stateless",
+      "requestId": "K6N8MCOEPFEBTUMI"
+    },
+    "$metadata": {
+      "id": "01KZM2XNHB6RQETNPD8ENE4WZ6",
+      "requestId": "K6N8MCOEPFEBTUMI",
+      "trigger": "*/5 * * * *",
+      "service": "ftn-worker",
+      "message": "Evaluating job 95677578-f522-4a22-b45b-d079cb3bf582 (Why NYC rat complaints are dropping). Scheduled for: 2026-08-12T10:00:00.000Z",
+      "account": "766be096be2baa4677baf5d515e51c8d",
+      "type": "cf-worker",
+      "fingerprint": "05daa513ce3512fef5d6fd9934920e0b",
+      "origin": "cron",
+      "messageTemplate": "Evaluating job <UUID> (Why NYC rat complaints are dropping). Scheduled for: <DATETIME>"
+    }
+  },
+  {
+    "source": {
+      "message": "Job 87771a77-8de3-4470-8ad1-12b922b93c25 is NOT due yet."
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-08-09T20:20:11.184Z",
+    "$workers": {
+      "truncated": false,
+      "event": {
+        "cron": "*/5 * * * *",
+        "scheduledTime": 1786306809000
+      },
+      "scriptName": "ftn-worker",
+      "eventType": "cron",
+      "scriptVersion": {
+        "id": "5b82b61b-756f-4343-9d73-931c43723b71"
+      },
+      "executionModel": "stateless",
+      "requestId": "K6N8MCOEPFEBTUMI"
+    },
+    "$metadata": {
+      "id": "01KZM2XN9GVH0GDBPP2DYD6ZF1",
+      "requestId": "K6N8MCOEPFEBTUMI",
+      "trigger": "*/5 * * * *",
+      "service": "ftn-worker",
+      "message": "Job 87771a77-8de3-4470-8ad1-12b922b93c25 is NOT due yet.",
+      "account": "766be096be2baa4677baf5d515e51c8d",
+      "type": "cf-worker",
+      "fingerprint": "05daa513ce3512fef5d6fd9934920e0b",
+      "origin": "cron",
+      "messageTemplate": "Job <UUID> is NOT due yet."
+    }
+  },
+  {
+    "source": {
+      "message": "Evaluating job 87771a77-8de3-4470-8ad1-12b922b93c25 (Is NYC finally winning the war against rats?). Scheduled for: 2026-08-10T10:00:00.000Z"
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-08-09T20:20:11.184Z",
+    "$workers": {
+      "truncated": false,
+      "event": {
+        "cron": "*/5 * * * *",
+        "scheduledTime": 1786306809000
+      },
+      "scriptName": "ftn-worker",
+      "eventType": "cron",
+      "scriptVersion": {
+        "id": "5b82b61b-756f-4343-9d73-931c43723b71"
+      },
+      "executionModel": "stateless",
+      "requestId": "K6N8MCOEPFEBTUMI"
+    },
+    "$metadata": {
+      "id": "01KZM2XN9GVH0GDBPP2DYD6ZF0",
+      "requestId": "K6N8MCOEPFEBTUMI",
+      "trigger": "*/5 * * * *",
+      "service": "ftn-worker",
+      "message": "Evaluating job 87771a77-8de3-4470-8ad1-12b922b93c25 (Is NYC finally winning the war against rats?). Scheduled for: 2026-08-10T10:00:00.000Z",
+      "account": "766be096be2baa4677baf5d515e51c8d",
+      "type": "cf-worker",
+      "fingerprint": "05daa513ce3512fef5d6fd9934920e0b",
+      "origin": "cron",
+      "messageTemplate": "Evaluating job <UUID> (Is NYC finally winning the war against rats?). Scheduled for: <DATETIME>"
+    }
+  },
+  {
+    "source": {
+      "message": "Job 2dd127ef-c042-4344-af32-73a8b8538e3a processing finished, but no new channels were successfully posted."
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-08-09T20:20:10.934Z",
+    "$workers": {
+      "truncated": false,
+      "event": {
+        "cron": "*/5 * * * *",
+        "scheduledTime": 1786306809000
+      },
+      "scriptName": "ftn-worker",
+      "eventType": "cron",
+      "scriptVersion": {
+        "id": "5b82b61b-756f-4343-9d73-931c43723b71"
+      },
+      "executionModel": "stateless",
+      "requestId": "K6N8MCOEPFEBTUMI"
+    },
+    "$metadata": {
+      "id": "01KZM2XN1PV2Q3HCMWQWDP0Q2Y",
+      "requestId": "K6N8MCOEPFEBTUMI",
+      "trigger": "*/5 * * * *",
+      "service": "ftn-worker",
+      "message": "Job 2dd127ef-c042-4344-af32-73a8b8538e3a processing finished, but no new channels were successfully posted.",
+      "account": "766be096be2baa4677baf5d515e51c8d",
+      "type": "cf-worker",
+      "fingerprint": "05daa513ce3512fef5d6fd9934920e0b",
+      "origin": "cron",
+      "messageTemplate": "Job <UUID> processing finished, but no new channels were successfully posted."
+    }
+  },
+  {
+    "source": {
+      "message": "Skipping unconfigured placeholder channel: BUFFER_FTN_NEWS_YOUTUBE_ID"
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-08-09T20:20:10.934Z",
+    "$workers": {
+      "truncated": false,
+      "event": {
+        "cron": "*/5 * * * *",
+        "scheduledTime": 1786306809000
+      },
+      "scriptName": "ftn-worker",
+      "eventType": "cron",
+      "scriptVersion": {
+        "id": "5b82b61b-756f-4343-9d73-931c43723b71"
+      },
+      "executionModel": "stateless",
+      "requestId": "K6N8MCOEPFEBTUMI"
+    },
+    "$metadata": {
+      "id": "01KZM2XN1PV2Q3HCMWQWDP0Q2X",
+      "requestId": "K6N8MCOEPFEBTUMI",
+      "trigger": "*/5 * * * *",
+      "service": "ftn-worker",
+      "message": "Skipping unconfigured placeholder channel: BUFFER_FTN_NEWS_YOUTUBE_ID",
+      "account": "766be096be2baa4677baf5d515e51c8d",
+      "type": "cf-worker",
+      "fingerprint": "05daa513ce3512fef5d6fd9934920e0b",
+      "origin": "cron",
+      "messageTemplate": "Skipping unconfigured placeholder channel: BUFFER_FTN_NEWS_YOUTUBE_ID"
+    }
+  },
+  {
+    "source": {
+      "level": "error",
+      "message": "Buffer Error Details: "
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-08-09T20:20:10.934Z",
+    "$workers": {
+      "truncated": false,
+      "event": {
+        "cron": "*/5 * * * *",
+        "scheduledTime": 1786306809000
+      },
+      "scriptName": "ftn-worker",
+      "eventType": "cron",
+      "scriptVersion": {
+        "id": "5b82b61b-756f-4343-9d73-931c43723b71"
+      },
+      "executionModel": "stateless",
+      "requestId": "K6N8MCOEPFEBTUMI"
+    },
+    "$metadata": {
+      "id": "01KZM2XN1PV2Q3HCMWQWDP0Q2W",
+      "requestId": "K6N8MCOEPFEBTUMI",
+      "trigger": "*/5 * * * *",
+      "service": "ftn-worker",
+      "level": "error",
+      "error": "Buffer Error Details: ",
+      "message": "Buffer Error Details: ",
+      "account": "766be096be2baa4677baf5d515e51c8d",
+      "type": "cf-worker",
+      "fingerprint": "62f707dd46b47b52f9ef586d04d9f203",
+      "origin": "cron",
+      "messageTemplate": "Buffer Error Details:"
+    }
+  },
+  {
+    "source": {
+      "level": "error",
+      "message": "Buffer HTTP Error on channel 6a789f17b2d9d5774345a91d: 404 Not Found"
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-08-09T20:20:10.934Z",
+    "$workers": {
+      "truncated": false,
+      "event": {
+        "cron": "*/5 * * * *",
+        "scheduledTime": 1786306809000
+      },
+      "scriptName": "ftn-worker",
+      "eventType": "cron",
+      "scriptVersion": {
+        "id": "5b82b61b-756f-4343-9d73-931c43723b71"
+      },
+      "executionModel": "stateless",
+      "requestId": "K6N8MCOEPFEBTUMI"
+    },
+    "$metadata": {
+      "id": "01KZM2XN1PV2Q3HCMWQWDP0Q2V",
+      "requestId": "K6N8MCOEPFEBTUMI",
+      "trigger": "*/5 * * * *",
+      "service": "ftn-worker",
+      "level": "error",
+      "error": "Buffer HTTP Error on channel 6a789f17b2d9d5774345a91d: 404 Not Found",
+      "message": "Buffer HTTP Error on channel 6a789f17b2d9d5774345a91d: 404 Not Found",
+      "account": "766be096be2baa4677baf5d515e51c8d",
+      "type": "cf-worker",
+      "fingerprint": "f030f7b45d215b721503bd9c80a54406",
+      "origin": "cron",
+      "messageTemplate": "Buffer HTTP Error on channel <*>: 404 Not Found"
+    }
+  },
+  {
+    "source": {
+      "message": "Attempting to post to Buffer channel: 6a789f17b2d9d5774345a91d..."
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-08-09T20:20:10.747Z",
+    "$workers": {
+      "truncated": false,
+      "event": {
+        "cron": "*/5 * * * *",
+        "scheduledTime": 1786306809000
+      },
+      "scriptName": "ftn-worker",
+      "eventType": "cron",
+      "scriptVersion": {
+        "id": "5b82b61b-756f-4343-9d73-931c43723b71"
+      },
+      "executionModel": "stateless",
+      "requestId": "K6N8MCOEPFEBTUMI"
+    },
+    "$metadata": {
+      "id": "01KZM2XMVV9VGY05A53JYATYA6",
+      "requestId": "K6N8MCOEPFEBTUMI",
+      "trigger": "*/5 * * * *",
+      "service": "ftn-worker",
+      "message": "Attempting to post to Buffer channel: 6a789f17b2d9d5774345a91d...",
+      "account": "766be096be2baa4677baf5d515e51c8d",
+      "type": "cf-worker",
+      "fingerprint": "05daa513ce3512fef5d6fd9934920e0b",
+      "origin": "cron",
+      "messageTemplate": "Attempting to post to Buffer channel: <*>..."
+    }
+  },
+  {
+    "source": {
+      "level": "error",
+      "message": "Buffer Error Details: "
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-08-09T20:20:10.747Z",
+    "$workers": {
+      "truncated": false,
+      "event": {
+        "cron": "*/5 * * * *",
+        "scheduledTime": 1786306809000
+      },
+      "scriptName": "ftn-worker",
+      "eventType": "cron",
+      "scriptVersion": {
+        "id": "5b82b61b-756f-4343-9d73-931c43723b71"
+      },
+      "executionModel": "stateless",
+      "requestId": "K6N8MCOEPFEBTUMI"
+    },
+    "$metadata": {
+      "id": "01KZM2XMVV9VGY05A53JYATYA5",
+      "requestId": "K6N8MCOEPFEBTUMI",
+      "trigger": "*/5 * * * *",
+      "service": "ftn-worker",
+      "level": "error",
+      "error": "Buffer Error Details: ",
+      "message": "Buffer Error Details: ",
+      "account": "766be096be2baa4677baf5d515e51c8d",
+      "type": "cf-worker",
+      "fingerprint": "62f707dd46b47b52f9ef586d04d9f203",
+      "origin": "cron",
+      "messageTemplate": "Buffer Error Details:"
+    }
+  },
+  {
+    "source": {
+      "level": "error",
+      "message": "Buffer HTTP Error on channel 6a78a0bcb2d9d5774345aec9: 404 Not Found"
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-08-09T20:20:10.747Z",
+    "$workers": {
+      "truncated": false,
+      "event": {
+        "cron": "*/5 * * * *",
+        "scheduledTime": 1786306809000
+      },
+      "scriptName": "ftn-worker",
+      "eventType": "cron",
+      "scriptVersion": {
+        "id": "5b82b61b-756f-4343-9d73-931c43723b71"
+      },
+      "executionModel": "stateless",
+      "requestId": "K6N8MCOEPFEBTUMI"
+    },
+    "$metadata": {
+      "id": "01KZM2XMVV9VGY05A53JYATYA4",
+      "requestId": "K6N8MCOEPFEBTUMI",
+      "trigger": "*/5 * * * *",
+      "service": "ftn-worker",
+      "level": "error",
+      "error": "Buffer HTTP Error on channel 6a78a0bcb2d9d5774345aec9: 404 Not Found",
+      "message": "Buffer HTTP Error on channel 6a78a0bcb2d9d5774345aec9: 404 Not Found",
+      "account": "766be096be2baa4677baf5d515e51c8d",
+      "type": "cf-worker",
+      "fingerprint": "6a28b395c2b25f7df7c5e45be29ea954",
+      "origin": "cron",
+      "messageTemplate": "Buffer HTTP Error on channel <*>: 404 Not Found"
+    }
+  },
+  {
+    "source": {
+      "message": "Attempting to post to Buffer channel: 6a78a0bcb2d9d5774345aec9..."
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-08-09T20:20:10.389Z",
+    "$workers": {
+      "truncated": false,
+      "event": {
+        "cron": "*/5 * * * *",
+        "scheduledTime": 1786306809000
+      },
+      "scriptName": "ftn-worker",
+      "eventType": "cron",
+      "scriptVersion": {
+        "id": "5b82b61b-756f-4343-9d73-931c43723b71"
+      },
+      "executionModel": "stateless",
+      "requestId": "K6N8MCOEPFEBTUMI"
+    },
+    "$metadata": {
+      "id": "01KZM2XMGNR9ZBGF1QMW4H0SCM",
+      "requestId": "K6N8MCOEPFEBTUMI",
+      "trigger": "*/5 * * * *",
+      "service": "ftn-worker",
+      "message": "Attempting to post to Buffer channel: 6a78a0bcb2d9d5774345aec9...",
+      "account": "766be096be2baa4677baf5d515e51c8d",
+      "type": "cf-worker",
+      "fingerprint": "05daa513ce3512fef5d6fd9934920e0b",
+      "origin": "cron",
+      "messageTemplate": "Attempting to post to Buffer channel: <*>..."
+    }
+  },
+  {
+    "source": {
+      "message": "Job 2dd127ef-c042-4344-af32-73a8b8538e3a is DUE! Processing..."
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-08-09T20:20:10.389Z",
+    "$workers": {
+      "truncated": false,
+      "event": {
+        "cron": "*/5 * * * *",
+        "scheduledTime": 1786306809000
+      },
+      "scriptName": "ftn-worker",
+      "eventType": "cron",
+      "scriptVersion": {
+        "id": "5b82b61b-756f-4343-9d73-931c43723b71"
+      },
+      "executionModel": "stateless",
+      "requestId": "K6N8MCOEPFEBTUMI"
+    },
+    "$metadata": {
+      "id": "01KZM2XMGNR9ZBGF1QMW4H0SCK",
+      "requestId": "K6N8MCOEPFEBTUMI",
+      "trigger": "*/5 * * * *",
+      "service": "ftn-worker",
+      "message": "Job 2dd127ef-c042-4344-af32-73a8b8538e3a is DUE! Processing...",
+      "account": "766be096be2baa4677baf5d515e51c8d",
+      "type": "cf-worker",
+      "fingerprint": "05daa513ce3512fef5d6fd9934920e0b",
+      "origin": "cron",
+      "messageTemplate": "Job <UUID> is DUE! Processing..."
+    }
+  },
+  {
+    "source": {
+      "message": "Evaluating job 2dd127ef-c042-4344-af32-73a8b8538e3a (NYC’s massive plan to eliminate trash bags). Scheduled for: 2026-08-09T20:14:54.123Z"
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-08-09T20:20:10.389Z",
+    "$workers": {
+      "truncated": false,
+      "event": {
+        "cron": "*/5 * * * *",
+        "scheduledTime": 1786306809000
+      },
+      "scriptName": "ftn-worker",
+      "eventType": "cron",
+      "scriptVersion": {
+        "id": "5b82b61b-756f-4343-9d73-931c43723b71"
+      },
+      "executionModel": "stateless",
+      "requestId": "K6N8MCOEPFEBTUMI"
+    },
+    "$metadata": {
+      "id": "01KZM2XMGNR9ZBGF1QMW4H0SCJ",
+      "requestId": "K6N8MCOEPFEBTUMI",
+      "trigger": "*/5 * * * *",
+      "service": "ftn-worker",
+      "message": "Evaluating job 2dd127ef-c042-4344-af32-73a8b8538e3a (NYC’s massive plan to eliminate trash bags). Scheduled for: 2026-08-09T20:14:54.123Z",
+      "account": "766be096be2baa4677baf5d515e51c8d",
+      "type": "cf-worker",
+      "fingerprint": "05daa513ce3512fef5d6fd9934920e0b",
+      "origin": "cron",
+      "messageTemplate": "Evaluating job <UUID> (NYC’s massive plan to eliminate trash bags). Scheduled for: <DATETIME>"
+    }
+  },
+  {
+    "source": {
+      "message": "Found 3 total videos in the queue."
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-08-09T20:20:10.137Z",
+    "$workers": {
+      "truncated": false,
+      "event": {
+        "cron": "*/5 * * * *",
+        "scheduledTime": 1786306809000
+      },
+      "scriptName": "ftn-worker",
+      "eventType": "cron",
+      "scriptVersion": {
+        "id": "5b82b61b-756f-4343-9d73-931c43723b71"
+      },
+      "executionModel": "stateless",
+      "requestId": "K6N8MCOEPFEBTUMI"
+    },
+    "$metadata": {
+      "id": "01KZM2XM8S4AF1JCMJBB97C3EP",
+      "requestId": "K6N8MCOEPFEBTUMI",
+      "trigger": "*/5 * * * *",
+      "service": "ftn-worker",
+      "message": "Found 3 total videos in the queue.",
+      "account": "766be096be2baa4677baf5d515e51c8d",
+      "type": "cf-worker",
+      "fingerprint": "05daa513ce3512fef5d6fd9934920e0b",
+      "origin": "cron",
+      "messageTemplate": "Found 3 total videos in the queue."
+    }
+  },
+  {
+    "source": {
+      "message": "⏰ Cron job triggered. Checking QUEUE_STORE..."
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-08-09T20:20:09.883Z",
+    "$workers": {
+      "truncated": false,
+      "event": {
+        "cron": "*/5 * * * *",
+        "scheduledTime": 1786306809000
+      },
+      "scriptName": "ftn-worker",
+      "eventType": "cron",
+      "scriptVersion": {
+        "id": "5b82b61b-756f-4343-9d73-931c43723b71"
+      },
+      "executionModel": "stateless",
+      "requestId": "K6N8MCOEPFEBTUMI"
+    },
+    "$metadata": {
+      "id": "01KZM2XM0VVEYZNQ3E11XNMYD6",
+      "requestId": "K6N8MCOEPFEBTUMI",
+      "trigger": "*/5 * * * *",
+      "service": "ftn-worker",
+      "message": "⏰ Cron job triggered. Checking QUEUE_STORE...",
+      "account": "766be096be2baa4677baf5d515e51c8d",
+      "type": "cf-worker",
+      "fingerprint": "05daa513ce3512fef5d6fd9934920e0b",
+      "origin": "cron",
+      "messageTemplate": "⏰ Cron job triggered. Checking QUEUE_STORE..."
+    }
+  },
+  {
+    "source": {
+      "level": "info",
+      "message": "*/5 * * * * "
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-08-09T20:20:09.876Z",
+    "$workers": {
+      "truncated": false,
+      "event": {
+        "cron": "*/5 * * * *",
+        "scheduledTime": 1786306809000
+      },
+      "scriptName": "ftn-worker",
+      "outcome": "ok",
+      "eventType": "cron",
+      "scriptVersion": {
+        "id": "5b82b61b-756f-4343-9d73-931c43723b71"
+      },
+      "executionModel": "stateless",
+      "requestId": "K6N8MCOEPFEBTUMI",
+      "wallTimeMs": 1559,
+      "cpuTimeMs": 2
+    },
+    "$metadata": {
+      "id": "01KZM2XM0MVGKGAQ51310GE879",
+      "requestId": "K6N8MCOEPFEBTUMI",
+      "trigger": "*/5 * * * *",
+      "service": "ftn-worker",
+      "level": "info",
+      "message": "*/5 * * * * ",
+      "account": "766be096be2baa4677baf5d515e51c8d",
+      "type": "cf-worker-event",
+      "fingerprint": "05daa513ce3512fef5d6fd9934920e0b",
+      "origin": "cron",
+      "messageTemplate": "*/5 * * * *"
+    }
+  },
+  {
+    "source": {
+      "message": "Skipping unconfigured channel: BUFFER_FTN_NEWS_YOUTUBE_ID"
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-08-09T20:15:12.170Z",
+    "$workers": {
+      "truncated": false,
+      "event": {
+        "cron": "*/5 * * * *",
+        "scheduledTime": 1786306509000
+      },
+      "scriptName": "ftn-worker",
+      "eventType": "cron",
+      "scriptVersion": {
+        "id": "bf82689c-cc28-46e3-b2a4-e1e44b62d2ff"
+      },
+      "executionModel": "stateless",
+      "requestId": "UHS1WV25XXGK0SUS"
+    },
+    "$metadata": {
+      "id": "01KZM2MH9A4S0WT9F5CF3K5E8A",
+      "requestId": "UHS1WV25XXGK0SUS",
+      "trigger": "*/5 * * * *",
+      "service": "ftn-worker",
+      "message": "Skipping unconfigured channel: BUFFER_FTN_NEWS_YOUTUBE_ID",
+      "account": "766be096be2baa4677baf5d515e51c8d",
+      "type": "cf-worker",
+      "fingerprint": "05daa513ce3512fef5d6fd9934920e0b",
+      "origin": "cron",
+      "messageTemplate": "Skipping unconfigured channel: BUFFER_FTN_NEWS_YOUTUBE_ID"
+    }
+  },
+  {
+    "source": {
+      "level": "error",
+      "message": "Failed to post to Buffer channel 6a789f17b2d9d5774345a91d for job 2dd127ef-c042-4344-af32-73a8b8538e3a: Not Found"
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-08-09T20:15:12.170Z",
+    "$workers": {
+      "truncated": false,
+      "event": {
+        "cron": "*/5 * * * *",
+        "scheduledTime": 1786306509000
+      },
+      "scriptName": "ftn-worker",
+      "eventType": "cron",
+      "scriptVersion": {
+        "id": "bf82689c-cc28-46e3-b2a4-e1e44b62d2ff"
+      },
+      "executionModel": "stateless",
+      "requestId": "UHS1WV25XXGK0SUS"
+    },
+    "$metadata": {
+      "id": "01KZM2MH9A4S0WT9F5CF3K5E89",
+      "requestId": "UHS1WV25XXGK0SUS",
+      "trigger": "*/5 * * * *",
+      "service": "ftn-worker",
+      "level": "error",
+      "error": "Failed to post to Buffer channel 6a789f17b2d9d5774345a91d for job 2dd127ef-c042-4344-af32-73a8b8538e3a: Not Found",
+      "message": "Failed to post to Buffer channel 6a789f17b2d9d5774345a91d for job 2dd127ef-c042-4344-af32-73a8b8538e3a: Not Found",
+      "account": "766be096be2baa4677baf5d515e51c8d",
+      "type": "cf-worker",
+      "fingerprint": "be64559471c8723ce19c31d498536d86",
+      "origin": "cron",
+      "messageTemplate": "Failed to post to Buffer channel <*> for job <UUID>: Not Found"
+    }
+  },
+  {
+    "source": {
+      "level": "error",
+      "message": "Failed to post to Buffer channel 6a78a0bcb2d9d5774345aec9 for job 2dd127ef-c042-4344-af32-73a8b8538e3a: Not Found"
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-08-09T20:15:11.442Z",
+    "$workers": {
+      "truncated": false,
+      "event": {
+        "cron": "*/5 * * * *",
+        "scheduledTime": 1786306509000
+      },
+      "scriptName": "ftn-worker",
+      "eventType": "cron",
+      "scriptVersion": {
+        "id": "bf82689c-cc28-46e3-b2a4-e1e44b62d2ff"
+      },
+      "executionModel": "stateless",
+      "requestId": "UHS1WV25XXGK0SUS"
+    },
+    "$metadata": {
+      "id": "01KZM2MGJJP50J0WPDCH33TZWR",
+      "requestId": "UHS1WV25XXGK0SUS",
+      "trigger": "*/5 * * * *",
+      "service": "ftn-worker",
+      "level": "error",
+      "error": "Failed to post to Buffer channel 6a78a0bcb2d9d5774345aec9 for job 2dd127ef-c042-4344-af32-73a8b8538e3a: Not Found",
+      "message": "Failed to post to Buffer channel 6a78a0bcb2d9d5774345aec9 for job 2dd127ef-c042-4344-af32-73a8b8538e3a: Not Found",
+      "account": "766be096be2baa4677baf5d515e51c8d",
+      "type": "cf-worker",
+      "fingerprint": "e112eb451ac1e7322239bb12717274eb",
+      "origin": "cron",
+      "messageTemplate": "Failed to post to Buffer channel 6a78a0bcb2d9d5774345aec9 for job <UUID>: Not Found"
+    }
+  },
+  {
+    "source": {
+      "level": "info",
+      "message": "*/5 * * * * "
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-08-09T20:15:09.875Z",
+    "$workers": {
+      "truncated": false,
+      "event": {
+        "cron": "*/5 * * * *",
+        "scheduledTime": 1786306509000
+      },
+      "scriptName": "ftn-worker",
+      "outcome": "ok",
+      "eventType": "cron",
+      "scriptVersion": {
+        "id": "bf82689c-cc28-46e3-b2a4-e1e44b62d2ff"
+      },
+      "executionModel": "stateless",
+      "requestId": "UHS1WV25XXGK0SUS",
+      "wallTimeMs": 2767,
+      "cpuTimeMs": 1
+    },
+    "$metadata": {
+      "id": "01KZM2MF1KYS0PB4GBKZ8XY9RB",
+      "requestId": "UHS1WV25XXGK0SUS",
+      "trigger": "*/5 * * * *",
+      "service": "ftn-worker",
+      "level": "info",
+      "message": "*/5 * * * * ",
+      "account": "766be096be2baa4677baf5d515e51c8d",
+      "type": "cf-worker-event",
+      "fingerprint": "05daa513ce3512fef5d6fd9934920e0b",
+      "origin": "cron",
+      "messageTemplate": "*/5 * * * *"
+    }
+  },
+  {
+    "source": {
+      "level": "info",
+      "message": "GET https://ftn-worker.evorsio1.workers.dev/api/videos?api_key=Zu1R28YU6w34"
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-08-09T20:14:54.260Z",
+    "$workers": {
+      "event": {
+        "request": {
+          "cf": {
+            "tlsClientAuth": {
+              "certRFC9440TooLarge": false,
+              "certChainRFC9440TooLarge": false,
+              "certPresented": "0",
+              "certVerified": "NONE",
+              "certRevoked": "0",
+              "certIssuerDN": "",
+              "certSubjectDN": "",
+              "certIssuerDNRFC2253": "",
+              "certSubjectDNRFC2253": "",
+              "certIssuerDNLegacy": "",
+              "certSubjectDNLegacy": "",
+              "certSerial": "",
+              "certIssuerSerial": "",
+              "certSKI": "",
+              "certIssuerSKI": "",
+              "certFingerprintSHA1": "",
+              "certFingerprintSHA256": "",
+              "certNotBefore": "",
+              "certNotAfter": "",
+              "certRFC9440": "",
+              "certChainRFC9440": ""
+            },
+            "httpProtocol": "HTTP/3",
+            "clientAcceptEncoding": "gzip, deflate, br",
+            "requestPriority": "",
+            "colo": "MRS",
+            "asOrganization": "POP LYO",
+            "country": "FR",
+            "isEUCountry": "1",
+            "city": "Dijon",
+            "continent": "EU",
+            "region": "Bourgogne",
+            "regionCode": "BFC",
+            "timezone": "Europe/Paris",
+            "longitude": "5.01391",
+            "latitude": "47.31344",
+            "postalCode": "21000",
+            "tlsVersion": "TLSv1.3",
+            "tlsCipher": "AEAD-AES128-GCM-SHA256",
+            "tlsClientRandom": "PzCSvyriHrKK6M4HQ/J3URMvWe/bwuwvc1KnaQPvWkk=",
+            "tlsClientCiphersSha1": "3HTt3+R/6BL3zeALJDSq0pR1yOQ=",
+            "tlsClientExtensionsSha1": "buaNQY0Z+5fy19cM5p2j2gDd9vY=",
+            "tlsClientExtensionsSha1Le": "ttJ6WJ51sTF8ZktYTz4kkJUznxY=",
+            "tlsExportedAuthenticator": {
+              "clientHandshake": "aecca6bce6eb012af2c069fbe7146c4f3db98d3e5094d513c0309cf1af3965e9",
+              "serverHandshake": "5f0fa97c74d2ba8f1f2d80a9cf1f02869dc8f0161d4ebfa0c2464f2f2a2a0fe1",
+              "clientFinished": "60f418c11bbf8ac6a7033ceb7957520072ef02c95fed78c7ed54c8ff5a5ea6d4",
+              "serverFinished": "5d844960fa338086afe983f1534dca6818ca871b680ec28f87394629adf3f9fc"
+            },
+            "tlsClientHelloLength": "1766",
+            "verifiedBotCategory": "",
+            "edgeRequestKeepAliveStatus": 1,
+            "clientTcpRtt": 0,
+            "clientQuicRtt": 7,
+            "asn": 3215,
+            "edgeL4": {
+              "deliveryRate": 180041
+            }
+          },
+          "url": "https://ftn-worker.evorsio1.workers.dev/api/videos?api_key=Zu1R28YU6w34",
+          "method": "GET",
+          "headers": {
+            "accept": "*/*",
+            "accept-encoding": "gzip, br",
+            "accept-language": "fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7,nl;q=0.6,de;q=0.5,ja;q=0.4,ru;q=0.3",
+            "cf-connecting-ip": "90.39.157.32",
+            "cf-ipcountry": "FR",
+            "cf-ray": "a2896e051a6a2d04",
+            "cf-visitor": "{\"scheme\":\"https\"}",
+            "connection": "Keep-Alive",
+            "host": "ftn-worker.evorsio1.workers.dev",
+            "origin": "http://localhost:5175",
+            "priority": "u=1, i",
+            "referer": "http://localhost:5175/",
+            "sec-ch-ua": "\"Opera GX\";v=\"133\", \"Chromium\";v=\"149\", \"Not)A;Brand\";v=\"24\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\"",
+            "sec-fetch-dest": "empty",
+            "sec-fetch-mode": "cors",
+            "sec-fetch-site": "cross-site",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 OPR/133.0.0.0",
+            "x-api-key": "********",
+            "x-forwarded-proto": "https",
+            "x-real-ip": "90.39.157.32"
+          },
+          "path": "/api/videos",
+          "search": {
+            "api_key": "************"
+          }
+        },
+        "rayId": "a2896e051a6a2d04",
+        "response": {
+          "status": 200
+        }
+      },
+      "truncated": false,
+      "scriptName": "ftn-worker",
+      "outcome": "ok",
+      "eventType": "fetch",
+      "executionModel": "stateless",
+      "scriptVersion": {
+        "id": "bf82689c-cc28-46e3-b2a4-e1e44b62d2ff"
+      },
+      "requestId": "a2896e051a6a2d04",
+      "cpuTimeMs": 1,
+      "wallTimeMs": 140
+    },
+    "$metadata": {
+      "id": "01KZM2KZSM429596FEHJWKESPM",
+      "requestId": "a2896e051a6a2d04",
+      "rayId": "a2896e051a6a2d04",
+      "trigger": "GET /api/videos",
+      "service": "ftn-worker",
+      "level": "info",
+      "message": "GET https://ftn-worker.evorsio1.workers.dev/api/videos?api_key=Zu1R28YU6w34",
+      "account": "766be096be2baa4677baf5d515e51c8d",
+      "type": "cf-worker-event",
+      "fingerprint": "05daa513ce3512fef5d6fd9934920e0b",
+      "origin": "fetch",
+      "messageTemplate": "GET https://ftn-worker.evorsio1.workers.dev/api/videos?api_key=Zu1R28YU6w34"
+    }
+  },
+  {
+    "source": {
+      "level": "info",
+      "message": "OPTIONS https://ftn-worker.evorsio1.workers.dev/api/videos?api_key=Zu1R28YU6w34"
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-08-09T20:14:54.241Z",
+    "$workers": {
+      "event": {
+        "request": {
+          "cf": {
+            "tlsClientAuth": {
+              "certRFC9440TooLarge": false,
+              "certChainRFC9440TooLarge": false,
+              "certPresented": "0",
+              "certVerified": "NONE",
+              "certRevoked": "0",
+              "certIssuerDN": "",
+              "certSubjectDN": "",
+              "certIssuerDNRFC2253": "",
+              "certSubjectDNRFC2253": "",
+              "certIssuerDNLegacy": "",
+              "certSubjectDNLegacy": "",
+              "certSerial": "",
+              "certIssuerSerial": "",
+              "certSKI": "",
+              "certIssuerSKI": "",
+              "certFingerprintSHA1": "",
+              "certFingerprintSHA256": "",
+              "certNotBefore": "",
+              "certNotAfter": "",
+              "certRFC9440": "",
+              "certChainRFC9440": ""
+            },
+            "httpProtocol": "HTTP/3",
+            "clientAcceptEncoding": "gzip, deflate, br",
+            "requestPriority": "",
+            "colo": "MRS",
+            "asOrganization": "POP LYO",
+            "country": "FR",
+            "isEUCountry": "1",
+            "city": "Dijon",
+            "continent": "EU",
+            "region": "Bourgogne",
+            "regionCode": "BFC",
+            "timezone": "Europe/Paris",
+            "longitude": "5.01391",
+            "latitude": "47.31344",
+            "postalCode": "21000",
+            "tlsVersion": "TLSv1.3",
+            "tlsCipher": "AEAD-AES128-GCM-SHA256",
+            "tlsClientRandom": "PzCSvyriHrKK6M4HQ/J3URMvWe/bwuwvc1KnaQPvWkk=",
+            "tlsClientCiphersSha1": "3HTt3+R/6BL3zeALJDSq0pR1yOQ=",
+            "tlsClientExtensionsSha1": "buaNQY0Z+5fy19cM5p2j2gDd9vY=",
+            "tlsClientExtensionsSha1Le": "ttJ6WJ51sTF8ZktYTz4kkJUznxY=",
+            "tlsExportedAuthenticator": {
+              "clientHandshake": "aecca6bce6eb012af2c069fbe7146c4f3db98d3e5094d513c0309cf1af3965e9",
+              "serverHandshake": "5f0fa97c74d2ba8f1f2d80a9cf1f02869dc8f0161d4ebfa0c2464f2f2a2a0fe1",
+              "clientFinished": "60f418c11bbf8ac6a7033ceb7957520072ef02c95fed78c7ed54c8ff5a5ea6d4",
+              "serverFinished": "5d844960fa338086afe983f1534dca6818ca871b680ec28f87394629adf3f9fc"
+            },
+            "tlsClientHelloLength": "1766",
+            "verifiedBotCategory": "",
+            "edgeRequestKeepAliveStatus": 1,
+            "clientTcpRtt": 0,
+            "clientQuicRtt": 7,
+            "asn": 3215,
+            "edgeL4": {
+              "deliveryRate": 180041
+            }
+          },
+          "url": "https://ftn-worker.evorsio1.workers.dev/api/videos?api_key=Zu1R28YU6w34",
+          "method": "OPTIONS",
+          "headers": {
+            "accept": "*/*",
+            "accept-encoding": "gzip, br",
+            "accept-language": "fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7,nl;q=0.6,de;q=0.5,ja;q=0.4,ru;q=0.3",
+            "access-control-request-headers": "x-api-key",
+            "access-control-request-method": "GET",
+            "cf-connecting-ip": "90.39.157.32",
+            "cf-ipcountry": "FR",
+            "cf-ray": "a2896e04fa2b2d04",
+            "cf-visitor": "{\"scheme\":\"https\"}",
+            "connection": "Keep-Alive",
+            "host": "ftn-worker.evorsio1.workers.dev",
+            "origin": "http://localhost:5175",
+            "priority": "u=1, i",
+            "referer": "http://localhost:5175/",
+            "sec-fetch-dest": "empty",
+            "sec-fetch-mode": "cors",
+            "sec-fetch-site": "cross-site",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 OPR/133.0.0.0",
+            "x-forwarded-proto": "https",
+            "x-real-ip": "90.39.157.32"
+          },
+          "path": "/api/videos",
+          "search": {
+            "api_key": "************"
+          }
+        },
+        "rayId": "a2896e04fa2b2d04",
+        "response": {
+          "status": 200
+        }
+      },
+      "truncated": false,
+      "scriptName": "ftn-worker",
+      "outcome": "ok",
+      "eventType": "fetch",
+      "executionModel": "stateless",
+      "scriptVersion": {
+        "id": "bf82689c-cc28-46e3-b2a4-e1e44b62d2ff"
+      },
+      "requestId": "a2896e04fa2b2d04",
+      "cpuTimeMs": 0,
+      "wallTimeMs": 0
+    },
+    "$metadata": {
+      "id": "01KZM2KZS1W10ST3C6YTSWAK4G",
+      "requestId": "a2896e04fa2b2d04",
+      "rayId": "a2896e04fa2b2d04",
+      "trigger": "OPTIONS /api/videos",
+      "service": "ftn-worker",
+      "level": "info",
+      "message": "OPTIONS https://ftn-worker.evorsio1.workers.dev/api/videos?api_key=Zu1R28YU6w34",
+      "account": "766be096be2baa4677baf5d515e51c8d",
+      "type": "cf-worker-event",
+      "fingerprint": "05daa513ce3512fef5d6fd9934920e0b",
+      "origin": "fetch",
+      "messageTemplate": "OPTIONS https://ftn-worker.evorsio1.workers.dev/api/videos?api_key=Zu1R28YU6w34"
+    }
+  },
+  {
+    "source": {
+      "level": "info",
+      "message": "POST https://ftn-worker.evorsio1.workers.dev/api/videos/REDACTED/post-now?api_key=Zu1R28YU6w34"
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-08-09T20:14:54.072Z",
+    "$workers": {
+      "event": {
+        "request": {
+          "cf": {
+            "tlsClientAuth": {
+              "certRFC9440TooLarge": false,
+              "certChainRFC9440TooLarge": false,
+              "certPresented": "0",
+              "certVerified": "NONE",
+              "certRevoked": "0",
+              "certIssuerDN": "",
+              "certSubjectDN": "",
+              "certIssuerDNRFC2253": "",
+              "certSubjectDNRFC2253": "",
+              "certIssuerDNLegacy": "",
+              "certSubjectDNLegacy": "",
+              "certSerial": "",
+              "certIssuerSerial": "",
+              "certSKI": "",
+              "certIssuerSKI": "",
+              "certFingerprintSHA1": "",
+              "certFingerprintSHA256": "",
+              "certNotBefore": "",
+              "certNotAfter": "",
+              "certRFC9440": "",
+              "certChainRFC9440": ""
+            },
+            "httpProtocol": "HTTP/3",
+            "clientAcceptEncoding": "gzip, deflate, br",
+            "requestPriority": "",
+            "colo": "MRS",
+            "asOrganization": "POP LYO",
+            "country": "FR",
+            "isEUCountry": "1",
+            "city": "Dijon",
+            "continent": "EU",
+            "region": "Bourgogne",
+            "regionCode": "BFC",
+            "timezone": "Europe/Paris",
+            "longitude": "5.01391",
+            "latitude": "47.31344",
+            "postalCode": "21000",
+            "tlsVersion": "TLSv1.3",
+            "tlsCipher": "AEAD-AES128-GCM-SHA256",
+            "tlsClientRandom": "PzCSvyriHrKK6M4HQ/J3URMvWe/bwuwvc1KnaQPvWkk=",
+            "tlsClientCiphersSha1": "3HTt3+R/6BL3zeALJDSq0pR1yOQ=",
+            "tlsClientExtensionsSha1": "buaNQY0Z+5fy19cM5p2j2gDd9vY=",
+            "tlsClientExtensionsSha1Le": "ttJ6WJ51sTF8ZktYTz4kkJUznxY=",
+            "tlsExportedAuthenticator": {
+              "clientHandshake": "aecca6bce6eb012af2c069fbe7146c4f3db98d3e5094d513c0309cf1af3965e9",
+              "serverHandshake": "5f0fa97c74d2ba8f1f2d80a9cf1f02869dc8f0161d4ebfa0c2464f2f2a2a0fe1",
+              "clientFinished": "60f418c11bbf8ac6a7033ceb7957520072ef02c95fed78c7ed54c8ff5a5ea6d4",
+              "serverFinished": "5d844960fa338086afe983f1534dca6818ca871b680ec28f87394629adf3f9fc"
+            },
+            "tlsClientHelloLength": "1766",
+            "verifiedBotCategory": "",
+            "edgeRequestKeepAliveStatus": 1,
+            "clientTcpRtt": 0,
+            "clientQuicRtt": 7,
+            "asn": 3215,
+            "edgeL4": {
+              "deliveryRate": 180041
+            }
+          },
+          "url": "https://ftn-worker.evorsio1.workers.dev/api/videos/REDACTED/post-now?api_key=Zu1R28YU6w34",
+          "method": "POST",
+          "headers": {
+            "accept": "*/*",
+            "accept-encoding": "gzip, br",
+            "accept-language": "fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7,nl;q=0.6,de;q=0.5,ja;q=0.4,ru;q=0.3",
+            "cf-connecting-ip": "90.39.157.32",
+            "cf-ipcountry": "FR",
+            "cf-ray": "a2896e03efdb2d04",
+            "cf-visitor": "{\"scheme\":\"https\"}",
+            "connection": "Keep-Alive",
+            "content-length": "0",
+            "host": "ftn-worker.evorsio1.workers.dev",
+            "origin": "http://localhost:5175",
+            "priority": "u=1, i",
+            "referer": "http://localhost:5175/",
+            "sec-ch-ua": "\"Opera GX\";v=\"133\", \"Chromium\";v=\"149\", \"Not)A;Brand\";v=\"24\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\"",
+            "sec-fetch-dest": "empty",
+            "sec-fetch-mode": "cors",
+            "sec-fetch-site": "cross-site",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 OPR/133.0.0.0",
+            "x-api-key": "********",
+            "x-forwarded-proto": "https",
+            "x-real-ip": "90.39.157.32"
+          },
+          "path": "/api/videos/REDACTED/post-now",
+          "search": {
+            "api_key": "************"
+          }
+        },
+        "rayId": "a2896e03efdb2d04",
+        "response": {
+          "status": 200
+        }
+      },
+      "truncated": false,
+      "scriptName": "ftn-worker",
+      "outcome": "ok",
+      "eventType": "fetch",
+      "executionModel": "stateless",
+      "scriptVersion": {
+        "id": "bf82689c-cc28-46e3-b2a4-e1e44b62d2ff"
+      },
+      "requestId": "a2896e03efdb2d04",
+      "cpuTimeMs": 0,
+      "wallTimeMs": 143
+    },
+    "$metadata": {
+      "id": "01KZM2KZKR8MFYKHFZ7VNMVFG4",
+      "requestId": "a2896e03efdb2d04",
+      "rayId": "a2896e03efdb2d04",
+      "trigger": "POST /api/videos/REDACTED/post-now",
+      "service": "ftn-worker",
+      "level": "info",
+      "message": "POST https://ftn-worker.evorsio1.workers.dev/api/videos/REDACTED/post-now?api_key=Zu1R28YU6w34",
+      "account": "766be096be2baa4677baf5d515e51c8d",
+      "type": "cf-worker-event",
+      "fingerprint": "05daa513ce3512fef5d6fd9934920e0b",
+      "origin": "fetch",
+      "messageTemplate": "POST https://ftn-worker.evorsio1.workers.dev/api/videos/REDACTED/post-now?api_key=Zu1R28YU6w34"
+    }
+  },
+  {
+    "source": {
+      "level": "info",
+      "message": "OPTIONS https://ftn-worker.evorsio1.workers.dev/api/videos/REDACTED/post-now?api_key=Zu1R28YU6w34"
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-08-09T20:14:54.052Z",
+    "$workers": {
+      "event": {
+        "request": {
+          "cf": {
+            "tlsClientAuth": {
+              "certRFC9440TooLarge": false,
+              "certChainRFC9440TooLarge": false,
+              "certPresented": "0",
+              "certVerified": "NONE",
+              "certRevoked": "0",
+              "certIssuerDN": "",
+              "certSubjectDN": "",
+              "certIssuerDNRFC2253": "",
+              "certSubjectDNRFC2253": "",
+              "certIssuerDNLegacy": "",
+              "certSubjectDNLegacy": "",
+              "certSerial": "",
+              "certIssuerSerial": "",
+              "certSKI": "",
+              "certIssuerSKI": "",
+              "certFingerprintSHA1": "",
+              "certFingerprintSHA256": "",
+              "certNotBefore": "",
+              "certNotAfter": "",
+              "certRFC9440": "",
+              "certChainRFC9440": ""
+            },
+            "httpProtocol": "HTTP/3",
+            "clientAcceptEncoding": "gzip, deflate, br",
+            "requestPriority": "",
+            "colo": "MRS",
+            "asOrganization": "POP LYO",
+            "country": "FR",
+            "isEUCountry": "1",
+            "city": "Dijon",
+            "continent": "EU",
+            "region": "Bourgogne",
+            "regionCode": "BFC",
+            "timezone": "Europe/Paris",
+            "longitude": "5.01391",
+            "latitude": "47.31344",
+            "postalCode": "21000",
+            "tlsVersion": "TLSv1.3",
+            "tlsCipher": "AEAD-AES128-GCM-SHA256",
+            "tlsClientRandom": "PzCSvyriHrKK6M4HQ/J3URMvWe/bwuwvc1KnaQPvWkk=",
+            "tlsClientCiphersSha1": "3HTt3+R/6BL3zeALJDSq0pR1yOQ=",
+            "tlsClientExtensionsSha1": "buaNQY0Z+5fy19cM5p2j2gDd9vY=",
+            "tlsClientExtensionsSha1Le": "ttJ6WJ51sTF8ZktYTz4kkJUznxY=",
+            "tlsExportedAuthenticator": {
+              "clientHandshake": "aecca6bce6eb012af2c069fbe7146c4f3db98d3e5094d513c0309cf1af3965e9",
+              "serverHandshake": "5f0fa97c74d2ba8f1f2d80a9cf1f02869dc8f0161d4ebfa0c2464f2f2a2a0fe1",
+              "clientFinished": "60f418c11bbf8ac6a7033ceb7957520072ef02c95fed78c7ed54c8ff5a5ea6d4",
+              "serverFinished": "5d844960fa338086afe983f1534dca6818ca871b680ec28f87394629adf3f9fc"
+            },
+            "tlsClientHelloLength": "1766",
+            "verifiedBotCategory": "",
+            "edgeRequestKeepAliveStatus": 1,
+            "clientTcpRtt": 0,
+            "clientQuicRtt": 7,
+            "asn": 3215,
+            "edgeL4": {
+              "deliveryRate": 180041
+            }
+          },
+          "url": "https://ftn-worker.evorsio1.workers.dev/api/videos/REDACTED/post-now?api_key=Zu1R28YU6w34",
+          "method": "OPTIONS",
+          "headers": {
+            "accept": "*/*",
+            "accept-encoding": "gzip, br",
+            "accept-language": "fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7,nl;q=0.6,de;q=0.5,ja;q=0.4,ru;q=0.3",
+            "access-control-request-headers": "x-api-key",
+            "access-control-request-method": "POST",
+            "cf-connecting-ip": "90.39.157.32",
+            "cf-ipcountry": "FR",
+            "cf-ray": "a2896e03cf832d04",
+            "cf-visitor": "{\"scheme\":\"https\"}",
+            "connection": "Keep-Alive",
+            "host": "ftn-worker.evorsio1.workers.dev",
+            "origin": "http://localhost:5175",
+            "priority": "u=1, i",
+            "referer": "http://localhost:5175/",
+            "sec-fetch-dest": "empty",
+            "sec-fetch-mode": "cors",
+            "sec-fetch-site": "cross-site",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 OPR/133.0.0.0",
+            "x-forwarded-proto": "https",
+            "x-real-ip": "90.39.157.32"
+          },
+          "path": "/api/videos/REDACTED/post-now",
+          "search": {
+            "api_key": "************"
+          }
+        },
+        "rayId": "a2896e03cf832d04",
+        "response": {
+          "status": 200
+        }
+      },
+      "truncated": false,
+      "scriptName": "ftn-worker",
+      "outcome": "ok",
+      "eventType": "fetch",
+      "executionModel": "stateless",
+      "scriptVersion": {
+        "id": "bf82689c-cc28-46e3-b2a4-e1e44b62d2ff"
+      },
+      "requestId": "a2896e03cf832d04",
+      "cpuTimeMs": 0,
+      "wallTimeMs": 0
+    },
+    "$metadata": {
+      "id": "01KZM2KZK4392D6YP5QFYYVW57",
+      "requestId": "a2896e03cf832d04",
+      "rayId": "a2896e03cf832d04",
+      "trigger": "OPTIONS /api/videos/REDACTED/post-now",
+      "service": "ftn-worker",
+      "level": "info",
+      "message": "OPTIONS https://ftn-worker.evorsio1.workers.dev/api/videos/REDACTED/post-now?api_key=Zu1R28YU6w34",
+      "account": "766be096be2baa4677baf5d515e51c8d",
+      "type": "cf-worker-event",
+      "fingerprint": "05daa513ce3512fef5d6fd9934920e0b",
+      "origin": "fetch",
+      "messageTemplate": "OPTIONS https://ftn-worker.evorsio1.workers.dev/api/videos/REDACTED/post-now?api_key=Zu1R28YU6w34"
+    }
+  }
+]

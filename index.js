@@ -211,15 +211,20 @@ export default {
 
             const query = `
               mutation {
-                createPost(
+                createPost(input: {
                   channelId: "${channelId}",
                   text: ${JSON.stringify(job.title)},
                   schedulingType: automatic,
                   mode: addToQueue,
                   assets: [{ video: { url: ${JSON.stringify(job.download_url)} } }]
-                ) {
-                  post {
-                    id
+                }) {
+                  ... on PostActionSuccess {
+                    post {
+                      id
+                    }
+                  }
+                  ... on MutationError {
+                    message
                   }
                 }
               }
@@ -238,7 +243,7 @@ export default {
               continue;
             }
 
-            const response = await fetch("https://api.buffer.com/1/graphql", {
+            const response = await fetch("https://api.buffer.com", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",

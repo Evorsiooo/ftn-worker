@@ -1,0 +1,1 @@
+{"query":"{ channels(input: { organizationId: \"6a789c6fbbb730bfcd813b44\" }) { id name service } }"}
