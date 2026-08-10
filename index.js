@@ -284,6 +284,31 @@ export default {
 
           if (allDone) {
             console.log(`🎉 Job ${key.name} posted to all channels. Keeping in queue for debugging/history.`);
+            
+            if (!job.discord_webhook_sent) {
+              let webhookUrl = job.brand === "FTN News" ? env.DISCORD_WEBHOOK_NEWS : env.DISCORD_WEBHOOK_SPORTS;
+              
+              if (webhookUrl) {
+                let isNews = job.brand === "FTN News";
+                let username = isNews ? "federaltelevision.news" : "federaltelevision.sports";
+                let color = isNews ? 0x007bff : 0xff4500; // Blue for news, Orange for sports (example)
+                
+                const embed = {
+                  title: `🎉 New Video on ${job.brand}!`,
+                  description: `**${job.title}**\n\nWatch it now on our channels:\n[TikTok](https://www.tiktok.com/@${username}) | [Instagram](https://www.instagram.com/${username})`,
+                  color: color
+                };
+                
+                await fetch(webhookUrl, {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify({ embeds: [embed] })
+                }).catch(err => console.error(`Discord Webhook Error: ${err.message}`));
+                
+                job.discord_webhook_sent = true;
+              }
+            }
+            
             await env.QUEUE_STORE.put(key.name, JSON.stringify(job));
           } else if (jobModified) {
             console.log(`Job ${key.name} partially completed. Saving progress...`);
