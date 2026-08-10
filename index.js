@@ -215,7 +215,7 @@ export default {
             console.log(`Attempting to post to Buffer channel: ${channelId}...`);
 
             const isInstagram = channelId === "6a789f17b2d9d5774345a91d" || channelId === "6a78b7c7b2d9d5774346590b";
-            const metadataStr = isInstagram ? `metadata: { instagram: { type: reel } }` : ``;
+            const metadataStr = isInstagram ? `metadata: { instagram: { type: reel, shouldShareToFeed: true } }` : ``;
 
             const query = `
               mutation {
