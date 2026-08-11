@@ -207,7 +207,6 @@ export default {
             }
 
             if (channelId.startsWith("BUFFER_")) {
-              allDone = false; 
               console.log(`Skipping unconfigured placeholder channel: ${channelId}`);
               continue;
             }
