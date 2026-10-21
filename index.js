@@ -129,6 +129,7 @@ export default {
           const job = JSON.parse(jobString);
           job.scheduled_date = new Date().toISOString(); // fast-track
           job.completed_channels = []; // force retry for debugging
+          job.discord_webhook_sent = false; // reset notification flag
           await env.QUEUE_STORE.put(jobId, JSON.stringify(job));
           return new Response(JSON.stringify({ success: true, message: "Video fast-tracked" }), { status: 200, headers: { "Content-Type": "application/json" } });
         }
@@ -184,18 +185,26 @@ export default {
         const job = JSON.parse(jobString);
         job.completed_channels = job.completed_channels || [];
         const scheduledTime = new Date(job.scheduled_date).getTime();
+        const channelIds = BRAND_CONFIG[job.brand];
+
+        if (!channelIds || channelIds.length === 0) {
+          console.error(`No channels configured for brand: ${job.brand}`);
+          await env.QUEUE_STORE.delete(key.name);
+          continue;
+        }
+
+        const activeChannels = channelIds.filter(id => !id.startsWith("BUFFER_"));
+        const isFullyPosted = activeChannels.length > 0 && activeChannels.every(id => job.completed_channels.includes(id));
+
+        // If job is already fully posted and Discord notification was sent, skip completely (0 KV writes)
+        if (isFullyPosted && job.discord_webhook_sent) {
+          continue;
+        }
 
         console.log(`Evaluating job ${key.name} (${job.title}). Scheduled for: ${new Date(scheduledTime).toISOString()}`);
 
         if (now >= scheduledTime) {
           console.log(`Job ${key.name} is DUE! Processing...`);
-          const channelIds = BRAND_CONFIG[job.brand];
-
-          if (!channelIds || channelIds.length === 0) {
-            console.error(`No channels configured for brand: ${job.brand}`);
-            await env.QUEUE_STORE.delete(key.name);
-            continue;
-          }
 
           let allDone = true;
           let jobModified = false;
@@ -282,7 +291,7 @@ export default {
           }
 
           if (allDone) {
-            console.log(`🎉 Job ${key.name} posted to all channels. Keeping in queue for debugging/history.`);
+            console.log(`🎉 Job ${key.name} posted to all active channels.`);
             
             if (!job.discord_webhook_sent) {
               let webhookUrl = job.brand === "FTN News" ? env.DISCORD_WEBHOOK_NEWS : env.DISCORD_WEBHOOK_SPORTS;
@@ -290,7 +299,7 @@ export default {
               if (webhookUrl) {
                 let isNews = job.brand === "FTN News";
                 let username = isNews ? "federaltelevision.news" : "federaltelevision.sports";
-                let color = isNews ? 0x007bff : 0xff4500; // Blue for news, Orange for sports (example)
+                let color = isNews ? 0x007bff : 0xff4500;
                 
                 const embed = {
                   title: `🎉 New Video on ${job.brand}!`,
@@ -305,15 +314,17 @@ export default {
                 }).catch(err => console.error(`Discord Webhook Error: ${err.message}`));
                 
                 job.discord_webhook_sent = true;
+                jobModified = true;
               }
             }
-            
-            await env.QUEUE_STORE.put(key.name, JSON.stringify(job));
-          } else if (jobModified) {
-            console.log(`Job ${key.name} partially completed. Saving progress...`);
+          }
+
+          // Only write to KV if state actually changed during this execution
+          if (jobModified) {
+            console.log(`Saving updated state for job ${key.name} to QUEUE_STORE...`);
             await env.QUEUE_STORE.put(key.name, JSON.stringify(job));
           } else {
-            console.log(`Job ${key.name} processing finished, but no new channels were successfully posted.`);
+            console.log(`No state changes for job ${key.name}. Skipping KV write.`);
           }
         } else {
           console.log(`Job ${key.name} is NOT due yet.`);
